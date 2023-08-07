@@ -1,0 +1,29 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Platform</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Exam Questions</h1>
+        <ul id="question-list" class="list-group"></ul>
+    </div>
+
+    <!-- Include Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module">
+
+        $(document).ready(() => { // Fetch questions from the backend API $.get('/api/questions', (questions) => { const questionList = $('#question-list'); questions.forEach((question) => { // Append each question as a list item to the questionList element questionList.append(`
+        <li class="list-group-item">${question.question}</li>`); }); // Handle click event on a question questionList.on('click', 'li', (event) => { const questionText = $(event.target).text(); // Fetch the specific question and display it $.get(`/api/questions/${questionText}`,
+        (question) => { // Display the question and its answer alert(`Question: ${question.question}\nAnswer: ${question.answer}`); }); }); }); });
+    </script>
+</body>
+
+</html>

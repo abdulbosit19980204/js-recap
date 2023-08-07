@@ -1,0 +1,19 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#question-list {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
