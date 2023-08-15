@@ -28,7 +28,7 @@ for (let val of arr) {
 // const userJoinedMovies = userMovies.join(" - ")
 // console.log(userJoinedMovies);
 
-// arr.sort((a, b) => a - b)
+arr.sort((a, b) => a - b)
 arr.sort(compareFn)
 console.log(arr);
 
